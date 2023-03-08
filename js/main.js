@@ -18,7 +18,7 @@ function displayTable(arr) {
             <td>${emp.type}</td>
             <td>
                 <button onclick="deleteEmployee('${emp.acc}')" class="btn btn-danger">Xóa</button>
-                <button onclick="viewDetail('${emp.acc}')" class="btn btn-info">Xem</button>
+                <button data-toggle="modal" data-target="#myModal" onclick="viewDetail('${emp.acc}')" class="btn btn-info">Xem</button>
             </td>
         </tr>`
     content += trELE;
@@ -159,3 +159,17 @@ getELE("searchTypeEmp").onkeyup = function () {
   displayTable(result);
 }
 
+var clear = function() {
+  if (getELE("tknv").disabled = true) {
+      getELE("tknv").disabled = false;
+      getELE("tknv").value = "";
+  }
+  getELE("name").value = "";
+  getELE("email").value = "";
+  getELE("password").value = "";
+  getELE("luongCB").value = "";
+  getELE("chucvu").value = "Chọn chức vụ";
+  getELE("gioLam").value = "";
+}
+
+getELE("btnDong").onclick = clear;
